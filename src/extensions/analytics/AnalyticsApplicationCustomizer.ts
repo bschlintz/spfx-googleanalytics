@@ -32,7 +32,7 @@ export default class AnalyticsApplicationCustomizer
 
       //Invoke Google Analytics Page Tracker
       window["dataLayer"] = window["dataLayer"] || [];
-      window["gtag"] = function gtag() {
+      window["gtag"] = window["gtag"] || function gtag() {
         window["dataLayer"].push(arguments);
       }
       window["gtag"]('js', new Date());
