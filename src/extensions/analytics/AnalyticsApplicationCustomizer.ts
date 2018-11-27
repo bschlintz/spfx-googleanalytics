@@ -7,6 +7,8 @@ import { Dialog } from '@microsoft/sp-dialog';
 
 import * as strings from 'AnalyticsApplicationCustomizerStrings';
 
+import AnalyticsConfig from './AnalyticsConfig';
+
 const LOG_SOURCE: string = 'AnalyticsApplicationCustomizer';
 
 export interface IAnalyticsApplicationCustomizerProperties { }
@@ -15,11 +17,12 @@ export default class AnalyticsApplicationCustomizer
   extends BaseApplicationCustomizer<IAnalyticsApplicationCustomizerProperties> {
 
   @override
-  public onInit(): Promise<void> {
-    let trackingID: string = "UA-129865562-1";
+  public async onInit(): Promise<void> {
+    let trackingID: string = await AnalyticsConfig.getTrackingId();
 
     if (!trackingID) {
-      Log.info(LOG_SOURCE, "Google Analytics Tracking ID: Not Specified");
+      Log.warn(LOG_SOURCE, "Google Analytics Tracking ID: Not Specified");
+
     } else {
       Log.info(LOG_SOURCE, `Google Analytics Tracking ID: ${trackingID}`);
 
@@ -38,7 +41,5 @@ export default class AnalyticsApplicationCustomizer
       window["gtag"]('js', new Date());
       window["gtag"]('config', trackingID);
     }
-
-    return Promise.resolve();
   }
 }
