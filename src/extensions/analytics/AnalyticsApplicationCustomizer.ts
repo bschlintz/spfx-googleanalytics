@@ -18,18 +18,21 @@ export default class AnalyticsApplicationCustomizer
 
   @override
   public async onInit(): Promise<void> {
-    let trackingID: string = await AnalyticsConfig.getTrackingId();
+    let analyticsConfig = new AnalyticsConfig();
+    await analyticsConfig.setup(this.context);
+    let googleTrackingId: string = await analyticsConfig.getGoogleTrackingId();
 
-    if (!trackingID) {
-      Log.warn(LOG_SOURCE, "Google Analytics Tracking ID: Not Specified");
+    if (!googleTrackingId) {
+      console.warn(LOG_SOURCE, "Google Analytics Tracking ID: Not Specified");
+      googleTrackingId = await analyticsConfig.setGoogleTrackingId("UA-129865562-1");
 
     } else {
-      Log.info(LOG_SOURCE, `Google Analytics Tracking ID: ${trackingID}`);
+      console.log(LOG_SOURCE, `Google Analytics Tracking ID: ${googleTrackingId}`);
 
       //Add Google Analytics Script Tag to Page
       var gtagScript = document.createElement("script");
       gtagScript.type = "text/javascript";
-      gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${trackingID}`;
+      gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${googleTrackingId}`;
       gtagScript.async = true;
       document.head.appendChild(gtagScript);
 
@@ -39,7 +42,7 @@ export default class AnalyticsApplicationCustomizer
         window["dataLayer"].push(arguments);
       }
       window["gtag"]('js', new Date());
-      window["gtag"]('config', trackingID);
+      window["gtag"]('config', googleTrackingId);
     }
   }
 }
