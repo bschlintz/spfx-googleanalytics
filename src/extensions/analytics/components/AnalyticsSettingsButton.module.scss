@@ -1,0 +1,19 @@
+// @import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+
+.container {
+  align-items: flex-end;
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+  display: flex;
+  flex-direction: row;
+
+  .iconButton {
+    font-size: 18px;
+  }
+
+  .notSetup {
+    background: yellow;
+    border-radius: 50px;
+  }
+}

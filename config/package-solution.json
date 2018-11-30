@@ -1,9 +1,9 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "spfx-googleanalytics-client-side-solution",
+    "name": "Google Analytics Tracker",
     "id": "510dec7c-a13d-4507-8fb9-4edf88d65073",
-    "version": "1.0.0.0",
+    "version": "1.0.0.4",
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
     "features": [

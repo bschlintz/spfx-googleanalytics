@@ -9,7 +9,7 @@
         "2699a661-6dd2-45fc-9acf-00eaf67318df": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "testMessage": "Test message"
+            "googleTrackingId": ""
           }
         }
       }
@@ -20,10 +20,15 @@
         "2699a661-6dd2-45fc-9acf-00eaf67318df": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "testMessage": "Test message"
+            "googleTrackingId": ""
           }
         }
       }
     }
+  },
+  "initialPage": "https://localhost:5432/workbench",
+  "api": {
+    "port": 5432,
+    "entryPath": "node_modules/@microsoft/sp-webpart-workbench/lib/api/"
   }
 }

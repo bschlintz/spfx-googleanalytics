@@ -244,7 +244,7 @@
     jju "~1.3.0"
     z-schema "~3.18.3"
 
-"@microsoft/office-ui-fabric-react-bundle@1.7.0":
+"@microsoft/office-ui-fabric-react-bundle@1.7.0", "@microsoft/office-ui-fabric-react-bundle@^1.7.0":
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/@microsoft/office-ui-fabric-react-bundle/-/office-ui-fabric-react-bundle-1.7.0.tgz#7d0d652d74c5a9ab44841a2694d6aa50e529f29b"
   dependencies:
@@ -501,7 +501,7 @@
     "@types/es6-promise" "0.0.33"
     "@types/webpack-env" "1.13.1"
 
-"@microsoft/sp-http@1.7.0":
+"@microsoft/sp-http@1.7.0", "@microsoft/sp-http@^1.7.0":
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/@microsoft/sp-http/-/sp-http-1.7.0.tgz#7cfb0339f87944018b76458de985d40426c77d13"
   dependencies:
@@ -558,6 +558,14 @@
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/@microsoft/sp-odata-types/-/sp-odata-types-1.7.0.tgz#2c53f1ff3d1c7a6b93177b4a2a0bf7f1e9b734b7"
   dependencies:
+    tslib "~1.8.0"
+
+"@microsoft/sp-office-ui-fabric-core@1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@microsoft/sp-office-ui-fabric-core/-/sp-office-ui-fabric-core-1.7.0.tgz#cca4379cf3db1245893c068e943a4cc47e2b0242"
+  dependencies:
+    "@types/webpack-env" "1.13.1"
+    office-ui-fabric-core "9.6.1-fluent2"
     tslib "~1.8.0"
 
 "@microsoft/sp-page-context@1.7.0":
@@ -671,31 +679,6 @@
 "@microsoft/tsdoc@0.9.2":
   version "0.9.2"
   resolved "https://registry.yarnpkg.com/@microsoft/tsdoc/-/tsdoc-0.9.2.tgz#66feb4bd58c00277097e26987aed18f2e6c0fd24"
-
-"@pnp/common@^1.2.6":
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/@pnp/common/-/common-1.2.6.tgz#d74aea22af93f5e6331ce644555deca1c72a37c9"
-  dependencies:
-    adal-angular "1.0.17"
-    tslib "1.9.3"
-
-"@pnp/logging@^1.2.6":
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/@pnp/logging/-/logging-1.2.6.tgz#a2d4f325820888e1c922d94e951ed339d755110a"
-  dependencies:
-    tslib "1.9.3"
-
-"@pnp/odata@^1.2.6":
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/@pnp/odata/-/odata-1.2.6.tgz#21011f51452b1abe85840df439433e418b84ee83"
-  dependencies:
-    tslib "1.9.3"
-
-"@pnp/sp@^1.2.6":
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/@pnp/sp/-/sp-1.2.6.tgz#0996ef821660c458e988adb265b1c5bd6891bca0"
-  dependencies:
-    tslib "1.9.3"
 
 "@pnpm/link-bins@~1.0.1":
   version "1.0.3"
@@ -887,10 +870,6 @@
   dependencies:
     "@types/q" "*"
 
-"@types/prop-types@*":
-  version "15.5.6"
-  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.5.6.tgz#9c03d3fed70a8d517c191b7734da2879b50ca26c"
-
 "@types/q@*":
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.1.tgz#48fd98c1561fe718b61733daed46ff115b496e18"
@@ -914,14 +893,7 @@
     "@types/node" "*"
     "@types/react" "*"
 
-"@types/react@*":
-  version "16.7.7"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.7.7.tgz#1e5e23e7dd922968ed4b484cdec00a5402c9f31b"
-  dependencies:
-    "@types/prop-types" "*"
-    csstype "^2.2.0"
-
-"@types/react@16.4.2":
+"@types/react@*", "@types/react@16.4.2":
   version "16.4.2"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.4.2.tgz#f1a9cf1ee85221530def2ac26aee20f910a9dac8"
   dependencies:
@@ -1136,10 +1108,6 @@ acorn@^6.0.1:
 adal-angular@1.0.16:
   version "1.0.16"
   resolved "https://registry.yarnpkg.com/adal-angular/-/adal-angular-1.0.16.tgz#e2bc31bc712aaffba053aa4dd46bc84eb5d2090f"
-
-adal-angular@1.0.17:
-  version "1.0.17"
-  resolved "https://registry.yarnpkg.com/adal-angular/-/adal-angular-1.0.17.tgz#6e936e0e41f91d3b2a88e7ffca9c2f6f6f562cc4"
 
 after@0.8.2:
   version "0.8.2"
@@ -6871,6 +6839,10 @@ object.pick@^1.2.0, object.pick@^1.3.0:
   dependencies:
     isobject "^3.0.1"
 
+office-ui-fabric-core@9.6.1-fluent2:
+  version "9.6.1-fluent2"
+  resolved "https://registry.yarnpkg.com/office-ui-fabric-core/-/office-ui-fabric-core-9.6.1-fluent2.tgz#ad90db192787381c9b877358a914be8781fa6e49"
+
 office-ui-fabric-react@5.131.0:
   version "5.131.0"
   resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-5.131.0.tgz#8084e3ad4963851412dfc15936ee9814a668a59b"
@@ -9242,7 +9214,7 @@ trim-right@^1.0.1:
   dependencies:
     glob "^7.1.2"
 
-tslib@1.9.3, tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1:
+tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
 

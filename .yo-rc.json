@@ -1,13 +1,12 @@
 {
   "@microsoft/generator-sharepoint": {
     "packageManager": "yarn",
-    "isCreatingSolution": true,
+    "isCreatingSolution": false,
     "environment": "spo",
     "version": "1.7.0",
     "libraryName": "spfx-googleanalytics",
     "libraryId": "510dec7c-a13d-4507-8fb9-4edf88d65073",
     "isDomainIsolated": false,
-    "componentType": "extension",
-    "extensionType": "ApplicationCustomizer"
+    "componentType": "webpart"
   }
 }
