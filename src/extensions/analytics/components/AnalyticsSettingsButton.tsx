@@ -1,6 +1,8 @@
 import * as React from 'react';
 import styles from './AnalyticsSettingsButton.module.scss';
-import { PrimaryButton, Button, Dialog, DialogFooter, TextField, IconButton } from '@microsoft/office-ui-fabric-react-bundle';
+import { TextField } from 'office-ui-fabric-react/lib/TextField';
+import { Button, PrimaryButton, IconButton } from 'office-ui-fabric-react/lib/Button';
+import { Dialog, DialogFooter } from 'office-ui-fabric-react/lib/Dialog';
 
 export class IAnalyticsSettingsButtonProps {
   public googleTrackingId: string;
@@ -8,7 +10,7 @@ export class IAnalyticsSettingsButtonProps {
 }
 
 export class AnalyticsSettingsButton extends React.Component<IAnalyticsSettingsButtonProps, { showModal: boolean; }> {
-  private _textGoogleAnalyticsTrackingId: TextField;
+  private _textGoogleAnalyticsTrackingId: any;
 
   constructor(props) {
     super(props);
@@ -35,7 +37,7 @@ export class AnalyticsSettingsButton extends React.Component<IAnalyticsSettingsB
           <TextField
             label="Tracking ID"
             defaultValue={this.props.googleTrackingId}
-            ref={r => this._textGoogleAnalyticsTrackingId = r}
+            componentRef={r => this._textGoogleAnalyticsTrackingId = r}
           ></TextField>
           <DialogFooter>
             <PrimaryButton onClick={this._onClickSave} text="Save" />
